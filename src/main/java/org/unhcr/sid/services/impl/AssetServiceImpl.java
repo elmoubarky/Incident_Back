@@ -40,7 +40,7 @@ public class AssetServiceImpl implements AssetService{
 		asset.setBureau(bureau);
 		asset.setCustodian(custodian);
 		asset.setDateAchat(dateAchat);
-		SimpleDateFormat sdf2  = new SimpleDateFormat("dd-MM-yyyy HH:MM:SS");
+		SimpleDateFormat sdf2  = new SimpleDateFormat("dd-MM-yyyy HH:MM");
 		String datecreation = sdf2.format(new Date());
 		asset.setDateEnreg(sdf2.format(new Date()));
 		asset.setModele(modele);
@@ -50,7 +50,7 @@ public class AssetServiceImpl implements AssetService{
 		asset.setType(type);
 		asset.setUsername(username);
 		
-		String qr  = "HCR-CTO-"+serialId+".png";
+		String qr  = "HCR-ICO-"+serialId+".png";
 		String contenu = "Modele : "+modele+" \nType : "+type+" \nBc : "+bc
 				+" \nSerial : "+"HCR-ICO-"+serialId+" \nCustodian : "+custodian
 				+" \nDate achat : "+dateAchat+" \nDate creation : "+datecreation
@@ -150,11 +150,11 @@ public class AssetServiceImpl implements AssetService{
 		}
 		else if(option.equals("Bureau")) {
 			lis = assetRepository.findByBureauContains(search);
-			System.out.println("retour findByBcContains "+lis);
+			System.out.println("retour findByBureauContains "+lis);
 		}
 		else if(option.equals("Custodian")) {
 			lis = assetRepository.findByCustodianContains(search);
-			System.out.println("retour findByBcContains "+lis);
+			System.out.println("retour findByCustodianContains "+lis);
 		}
 		return lis;
 	}

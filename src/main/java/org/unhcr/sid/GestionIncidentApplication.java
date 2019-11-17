@@ -29,8 +29,8 @@ public class GestionIncidentApplication implements CommandLineRunner {
 	//private TacheService tacheService;
 
 	// exposer l'id
-	@Autowired
-	private RepositoryRestConfiguration repositoryRestConfiguration;
+	//@Autowired
+//	private RepositoryRestConfiguration repositoryRestConfiguration;
 	
 	@Bean
 	public RestTemplate getRestTemplate() {
@@ -55,8 +55,8 @@ public class GestionIncidentApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		// exposer l'id
-		repositoryRestConfiguration.exposeIdsFor(Tache.class, Asset.class, Cartouche.class, Tracking.class,
-				OperationAchat.class);
+		//repositoryRestConfiguration.exposeIdsFor(Tache.class, Asset.class, Cartouche.class, Tracking.class,
+		//		OperationAchat.class);
 
 		/*
 		 * tacheService.saveTache("SE defaillant", "MAINTENANCE", "ICO-Serial-0002",
